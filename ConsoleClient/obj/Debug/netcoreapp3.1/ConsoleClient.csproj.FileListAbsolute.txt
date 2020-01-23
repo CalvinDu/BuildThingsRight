@@ -9,3 +9,6 @@ C:\Users\ducong\source\repos\BuildThingsRight\ConsoleClient\obj\Debug\netcoreapp
 C:\Users\ducong\source\repos\BuildThingsRight\ConsoleClient\obj\Debug\netcoreapp3.1\ConsoleClient.AssemblyInfo.cs
 C:\Users\ducong\source\repos\BuildThingsRight\ConsoleClient\obj\Debug\netcoreapp3.1\ConsoleClient.dll
 C:\Users\ducong\source\repos\BuildThingsRight\ConsoleClient\obj\Debug\netcoreapp3.1\ConsoleClient.pdb
+C:\Users\ducong\source\repos\BuildThingsRight\ConsoleClient\bin\Debug\netcoreapp3.1\IdentityModel.dll
+C:\Users\ducong\source\repos\BuildThingsRight\ConsoleClient\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\ducong\source\repos\BuildThingsRight\ConsoleClient\obj\Debug\netcoreapp3.1\ConsoleClient.csproj.CopyComplete

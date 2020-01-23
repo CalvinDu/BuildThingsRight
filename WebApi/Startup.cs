@@ -26,6 +26,14 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddAuthentication("Bearer").AddJwtBearer("Bearer", o=> 
+            {
+                o.Authority = "http://localhost:5000";
+                o.RequireHttpsMetadata = false;
+
+                o.Audience = "api1";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +47,8 @@ namespace WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
