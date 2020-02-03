@@ -80,7 +80,19 @@ namespace IdentityServer
                     AllowedCorsOrigins = { "http://localhost:5002" },
 
                     AllowedScopes = { "openid", "profile", "api1" }
-                }
+                },
+                 new Client
+                 {
+                     ClientId ="password",
+                     ClientName = "password client",
+
+                     RequireClientSecret = false,
+                     AllowOfflineAccess = true,
+                     
+                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                     
+                     AllowedScopes = { "api1" }
+                 }
             };
     }
 }

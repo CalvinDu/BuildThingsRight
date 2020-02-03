@@ -17,13 +17,23 @@ namespace ConsoleClient
                 Console.WriteLine(disco.Error);
                 return;
             }
-            var token = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            var token = await client.RequestPasswordTokenAsync(new PasswordTokenRequest 
             {
                 Address = disco.TokenEndpoint,
-                ClientId = "client",
-                ClientSecret = "511536EF-F270-4058-80CA-1C89C192F69A",
-                Scope = "api1"
+                
+                ClientId = "password",
+                UserName = "alice",
+                Password = "alice",
+
+                Scope = "api1"               
             });
+            //var token = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            //{
+            //    Address = disco.TokenEndpoint,
+            //    ClientId = "client",
+            //    ClientSecret = "511536EF-F270-4058-80CA-1C89C192F69A",
+            //    Scope = "api1"
+            //});
 
             if (token.IsError)
             {
@@ -32,15 +42,16 @@ namespace ConsoleClient
             }
             Console.WriteLine(token.Json);
 
-            await Task.Delay(3600 * 1000);
+            //await Task.Delay(3600 * 1000);
             client.SetBearerToken(token.AccessToken);
 
+            //var response = await client.GetAsync("https://localhost:44388/webapi/weatherforecast");
             var response = await client.GetAsync("https://localhost:44357/weatherforecast");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
             }
-            else 
+            else
             {
                 var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(content);
